@@ -55,13 +55,6 @@ export default function HomePage() {
 
       <section className="content-section">
         <div className="shell">
-          <div className="compact-section-head">
-            <p className="eyebrow">Napalm Collection</p>
-            <Link href="/shop" className="text-link">
-              View all products
-            </Link>
-          </div>
-
           <div className="product-grid">
             {featuredProducts.map((product) => (
               <ProductCard key={product.slug} product={product} />
