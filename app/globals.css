@@ -302,10 +302,8 @@ h3 {
 }
 
 .napalm-banner {
-  display: grid;
-  grid-template-columns: 1fr 0.9fr;
-  gap: 24px;
-  align-items: center;
+  display: flex;
+  align-items: flex-end;
   padding: 34px;
   border-radius: 36px;
   border: 1px solid rgba(18, 18, 18, 0.06);
@@ -342,57 +340,12 @@ h3 {
 }
 
 .napalm-banner-copy .section-copy {
-  max-width: 34rem;
+  max-width: 40rem;
 }
 
 .napalm-banner-copy h2 {
   font-size: clamp(2.4rem, 4.5vw, 4.3rem);
   margin-bottom: 12px;
-}
-
-.napalm-banner-art {
-  min-height: 230px;
-  border-radius: 28px;
-  background:
-    linear-gradient(145deg, rgba(255, 211, 109, 0.12), rgba(25, 25, 22, 0.22)),
-    url("/napalm-banner-print.jpg");
-  background-size: cover;
-  background-position: center;
-  border: 1px solid rgba(255, 248, 232, 0.22);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.napalm-orb {
-  position: absolute;
-  border-radius: 999px;
-  filter: blur(1px);
-  opacity: 0.9;
-}
-
-.napalm-orb-one {
-  width: 150px;
-  height: 150px;
-  background: rgba(255, 229, 168, 0.38);
-  left: 12%;
-  top: 20%;
-}
-
-.napalm-orb-two {
-  width: 190px;
-  height: 190px;
-  background: rgba(255, 122, 58, 0.34);
-  right: 16%;
-  top: 12%;
-}
-
-.napalm-orb-three {
-  width: 220px;
-  height: 220px;
-  background: rgba(98, 13, 13, 0.28);
-  left: 38%;
-  bottom: 4%;
 }
 
 .activity-panel,
