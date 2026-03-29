@@ -310,10 +310,10 @@ h3 {
   border-radius: 36px;
   border: 1px solid rgba(18, 18, 18, 0.06);
   background:
-    radial-gradient(circle at 18% 22%, rgba(255, 210, 109, 0.95), transparent 19%),
-    radial-gradient(circle at 52% 34%, rgba(255, 131, 60, 0.88), transparent 24%),
-    radial-gradient(circle at 78% 52%, rgba(146, 24, 24, 0.88), transparent 26%),
-    linear-gradient(135deg, rgba(255, 210, 109, 0.96) 0%, rgba(255, 122, 58, 0.94) 35%, rgba(178, 40, 27, 0.94) 62%, rgba(22, 22, 20, 0.96) 100%);
+    linear-gradient(135deg, rgba(24, 10, 7, 0.18), rgba(24, 10, 7, 0.5)),
+    url("/napalm-banner-print.jpg");
+  background-size: cover;
+  background-position: center;
   box-shadow: var(--shadow);
   overflow: hidden;
   position: relative;
@@ -324,8 +324,8 @@ h3 {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(120deg, transparent 0 14%, rgba(255, 232, 187, 0.5) 14% 17%, transparent 17% 25%, rgba(255, 159, 65, 0.34) 25% 30%, transparent 30% 100%);
-  opacity: 0.75;
+    linear-gradient(100deg, rgba(18, 18, 18, 0.18) 0%, rgba(18, 18, 18, 0.05) 35%, rgba(18, 18, 18, 0.42) 100%);
+  opacity: 1;
   pointer-events: none;
 }
 
@@ -354,10 +354,10 @@ h3 {
   min-height: 230px;
   border-radius: 28px;
   background:
-    radial-gradient(circle at 26% 22%, rgba(255, 228, 165, 0.95), transparent 18%),
-    radial-gradient(circle at 72% 28%, rgba(255, 149, 68, 0.94), transparent 18%),
-    radial-gradient(circle at 60% 76%, rgba(121, 18, 18, 0.9), transparent 22%),
-    linear-gradient(145deg, rgba(255, 178, 72, 0.22), rgba(25, 25, 22, 0.28));
+    linear-gradient(145deg, rgba(255, 211, 109, 0.12), rgba(25, 25, 22, 0.22)),
+    url("/napalm-banner-print.jpg");
+  background-size: cover;
+  background-position: center;
   border: 1px solid rgba(255, 248, 232, 0.22);
   display: flex;
   align-items: center;
@@ -374,7 +374,7 @@ h3 {
 .napalm-orb-one {
   width: 150px;
   height: 150px;
-  background: rgba(255, 229, 168, 0.88);
+  background: rgba(255, 229, 168, 0.38);
   left: 12%;
   top: 20%;
 }
@@ -382,7 +382,7 @@ h3 {
 .napalm-orb-two {
   width: 190px;
   height: 190px;
-  background: rgba(255, 122, 58, 0.82);
+  background: rgba(255, 122, 58, 0.34);
   right: 16%;
   top: 12%;
 }
@@ -390,7 +390,7 @@ h3 {
 .napalm-orb-three {
   width: 220px;
   height: 220px;
-  background: rgba(98, 13, 13, 0.7);
+  background: rgba(98, 13, 13, 0.28);
   left: 38%;
   bottom: 4%;
 }
