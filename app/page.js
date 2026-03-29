@@ -26,7 +26,7 @@ export default function HomePage() {
 
           <div className="hero-panel">
             <p className="hero-panel-label">Active Drop</p>
-            <h2>Napalm Slides and hoodie available now.</h2>
+            <h2>Napalm Slides, hoodie, and denim jacket available now.</h2>
             <p>
               TROOPZ is live with real product photography, direct contact options,
               and a growing product lineup customers can shop right now.
@@ -79,7 +79,7 @@ export default function HomePage() {
           <div className="activity-grid">
             <article>
               <strong>Focused assortment</strong>
-              <p>Starting with real slides and a hoodie keeps the launch simple and believable.</p>
+              <p>Starting with real slides, a hoodie, and a jacket keeps the launch simple and believable.</p>
             </article>
             <article>
               <strong>Direct-to-customer flow</strong>
