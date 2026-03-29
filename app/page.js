@@ -41,12 +41,20 @@ export default function HomePage() {
       </section>
 
       <section className="content-section">
-        <div className="shell split-section">
-          <div>
-            <p className="eyebrow">Brand Statement</p>
-            <h2>A credible brand site built for real use.</h2>
+        <div className="shell napalm-banner">
+          <div className="napalm-banner-copy">
+            <p className="eyebrow">Napalm Banner</p>
+            <h2>Built loud. Worn louder.</h2>
+            <p className="section-copy">
+              TROOPZ Napalm print now leads the drop with statement slides, a hooded
+              sweatshirt, and a denim jacket built to stand out.
+            </p>
           </div>
-          <p className="section-copy">{site.brandStatement}</p>
+          <div className="napalm-banner-art" aria-hidden="true">
+            <span className="napalm-orb napalm-orb-one"></span>
+            <span className="napalm-orb napalm-orb-two"></span>
+            <span className="napalm-orb napalm-orb-three"></span>
+          </div>
         </div>
       </section>
 
