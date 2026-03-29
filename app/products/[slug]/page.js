@@ -69,7 +69,7 @@ export default async function ProductPage({ params }) {
           <p className="eyebrow">TROOPZ Product</p>
           <h1>{product.name}</h1>
           <p className="detail-price">
-            {product.price != null ? `$${product.price}` : product.priceLabel}
+            {product.price != null ? `$${product.price} USD` : product.priceLabel}
           </p>
           <p className="lead">{product.description}</p>
           <p className="section-copy">{product.details}</p>
