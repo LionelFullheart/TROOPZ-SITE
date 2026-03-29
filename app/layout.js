@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { MusicPlayer } from "@/components/MusicPlayer";
 
 export const metadata = {
   title: "TROOPZ | Jackets and Brand Store",
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <Footer />
+        <MusicPlayer />
       </body>
     </html>
   );
