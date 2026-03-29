@@ -3,7 +3,7 @@ import { getProducts } from "@/lib/products";
 
 export const metadata = {
   title: "Shop | TROOPZ",
-  description: "Shop TROOPZ jackets.",
+  description: "Shop TROOPZ products.",
 };
 
 export default function ShopPage() {
@@ -14,10 +14,10 @@ export default function ShopPage() {
       <div className="shell">
         <div className="page-header">
           <p className="eyebrow">Shop</p>
-          <h1>TROOPZ Jackets</h1>
+          <h1>TROOPZ Products</h1>
           <p className="lead">
-            A simple first drop built around outerwear, ready for real imagery and
-            production inventory later.
+            The first live product drop is here now, with more TROOPZ releases ready to
+            follow as the store grows.
           </p>
         </div>
 

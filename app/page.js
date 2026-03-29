@@ -26,10 +26,10 @@ export default function HomePage() {
 
           <div className="hero-panel">
             <p className="hero-panel-label">Active Drop</p>
-            <h2>Jackets first. More products coming soon.</h2>
+            <h2>Napalm Slides available now.</h2>
             <p>
-              TROOPZ is launching with a focused outerwear lineup, direct contact
-              options, and a clean customer path that can scale as the brand grows.
+              TROOPZ is live with its first footwear drop, real product photography,
+              direct contact options, and a clean path for customers to order now.
             </p>
             <div className="status-list">
               <span>Brand mark visible</span>
@@ -53,14 +53,14 @@ export default function HomePage() {
       <section className="content-section">
         <div className="shell">
           <div className="section-header">
-            <div>
-              <p className="eyebrow">Featured Jackets</p>
-              <h2>Current lineup</h2>
-            </div>
-            <Link href="/shop" className="text-link">
-              View all jackets
-            </Link>
+          <div>
+            <p className="eyebrow">Featured Product</p>
+            <h2>Current lineup</h2>
           </div>
+          <Link href="/shop" className="text-link">
+            View all products
+          </Link>
+        </div>
 
           <div className="product-grid">
             {featuredProducts.map((product) => (
@@ -79,7 +79,7 @@ export default function HomePage() {
           <div className="activity-grid">
             <article>
               <strong>Focused assortment</strong>
-              <p>Starting with jackets keeps the launch simple and believable.</p>
+              <p>Starting with a real slide drop keeps the launch simple and believable.</p>
             </article>
             <article>
               <strong>Direct-to-customer flow</strong>

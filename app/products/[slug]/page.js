@@ -37,25 +37,44 @@ export default async function ProductPage({ params }) {
   return (
     <main className="page-section">
       <div className="shell product-detail-grid">
-        <div className="detail-image-card">
-          <Image
-            src={product.image}
-            alt={product.name}
-            width={960}
-            height={960}
-            className="detail-image"
-            priority
-          />
+        <div className="detail-media">
+          <div className="detail-image-card">
+            <Image
+              src={product.image}
+              alt={product.name}
+              width={960}
+              height={960}
+              className="detail-image"
+              priority
+            />
+          </div>
+          {product.gallery?.length ? (
+            <div className="detail-gallery">
+              {product.gallery.map((image, index) => (
+                <div className="detail-gallery-card" key={image}>
+                  <Image
+                    src={image}
+                    alt={`${product.name} view ${index + 1}`}
+                    width={400}
+                    height={400}
+                    className="detail-gallery-image"
+                  />
+                </div>
+              ))}
+            </div>
+          ) : null}
         </div>
 
         <div className="detail-copy">
           <p className="eyebrow">TROOPZ Product</p>
           <h1>{product.name}</h1>
-          <p className="detail-price">${product.price}</p>
+          <p className="detail-price">
+            {product.price != null ? `$${product.price}` : product.priceLabel}
+          </p>
           <p className="lead">{product.description}</p>
           <p className="section-copy">{product.details}</p>
           <p className="coming-soon-note">
-            More TROOPZ products are coming soon as the jacket line expands.
+            Available now in men's sizes 5 through 13.
           </p>
 
           <ProductPurchaseForm product={product} />

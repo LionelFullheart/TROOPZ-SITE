@@ -14,11 +14,11 @@ export function ProductCard({ product }) {
         />
       </div>
       <div className="product-copy">
-        <p className="product-label">TROOPZ Jackets</p>
+        <p className="product-label">TROOPZ {product.category || "Product"}</p>
         <h3>{product.name}</h3>
         <p>{product.description}</p>
         <div className="product-meta">
-          <span>${product.price}</span>
+          <span>{product.price != null ? `$${product.price}` : product.priceLabel}</span>
           <Link href={`/products/${product.slug}`} className="button-secondary">
             View Product
           </Link>

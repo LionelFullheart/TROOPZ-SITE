@@ -64,16 +64,24 @@ export function ProductPurchaseForm({ product }) {
         />
       </label>
 
-      <button type="submit" className="button" disabled={loading}>
-        {loading ? "Starting checkout..." : "Buy Now"}
-      </button>
+      {product.price != null ? (
+        <button type="submit" className="button" disabled={loading}>
+          {loading ? "Starting checkout..." : "Buy Now"}
+        </button>
+      ) : (
+        <a className="button" href="/contact">
+          Ask About Ordering
+        </a>
+      )}
 
       <a className="text-link" href="/contact">
         Inquire or place an order directly
       </a>
 
       <p className="helper-text">
-        If Stripe keys are not added yet, this will continue in demo checkout mode.
+        {product.price != null
+          ? "If Stripe keys are not added yet, this will continue in demo checkout mode."
+          : "Pricing is being finalized. Use the contact option to place an order or request current pricing."}
       </p>
 
       {error ? <p className="error-text">{error}</p> : null}

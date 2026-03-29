@@ -14,6 +14,13 @@ export async function POST(request) {
     const quantity = Math.min(Math.max(Number(body.quantity) || 1, 1), 10);
     const size = body.size || product.availableSizes[0];
 
+    if (product.price == null) {
+      return NextResponse.json(
+        { error: "Pricing is not set yet for this product. Please use the contact form to order." },
+        { status: 400 }
+      );
+    }
+
     if (!hasStripeConfig()) {
       const demoUrl = `/success?mode=demo&product=${encodeURIComponent(product.name)}&size=${encodeURIComponent(size)}&quantity=${quantity}`;
       return NextResponse.json({ url: demoUrl, mode: "demo" });
