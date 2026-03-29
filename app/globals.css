@@ -250,6 +250,14 @@ h3 {
   margin-bottom: 24px;
 }
 
+.compact-section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
 .text-link {
   color: var(--green);
   font-weight: 700;

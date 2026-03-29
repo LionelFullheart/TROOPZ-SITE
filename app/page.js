@@ -55,15 +55,12 @@ export default function HomePage() {
 
       <section className="content-section">
         <div className="shell">
-          <div className="section-header">
-          <div>
-            <p className="eyebrow">Featured Product</p>
-            <h2>Current lineup</h2>
+          <div className="compact-section-head">
+            <p className="eyebrow">Napalm Collection</p>
+            <Link href="/shop" className="text-link">
+              View all products
+            </Link>
           </div>
-          <Link href="/shop" className="text-link">
-            View all products
-          </Link>
-        </div>
 
           <div className="product-grid">
             {featuredProducts.map((product) => (
