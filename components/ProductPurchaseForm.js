@@ -1,47 +1,32 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
+import { useCart } from "@/components/CartProvider";
 
 export function ProductPurchaseForm({ product }) {
+  const { addItem } = useCart();
   const [size, setSize] = useState(product.availableSizes[0] ?? "M");
   const [quantity, setQuantity] = useState(1);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [notice, setNotice] = useState("");
 
-  async function handleCheckout(event) {
+  function handleAddToCart(event) {
     event.preventDefault();
-    setLoading(true);
-    setError("");
-
-    try {
-      const response = await fetch("/api/checkout", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          slug: product.slug,
-          quantity,
-          size,
-        }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok || !data.url) {
-        throw new Error(data.error || "Unable to start checkout.");
-      }
-
-      window.location.href = data.url;
-    } catch (checkoutError) {
-      setError(checkoutError.message);
-    } finally {
-      setLoading(false);
-    }
+    addItem({
+      slug: product.slug,
+      name: product.name,
+      image: product.image,
+      category: product.category,
+      size,
+      quantity,
+      price: product.price,
+      priceLabel: product.priceLabel,
+    });
+    setNotice(`${product.name} added to cart.`);
   }
 
   return (
-    <form className="purchase-panel" onSubmit={handleCheckout}>
+    <form className="purchase-panel" onSubmit={handleAddToCart}>
       <label className="field">
         <span>Size</span>
         <select value={size} onChange={(event) => setSize(event.target.value)}>
@@ -65,9 +50,14 @@ export function ProductPurchaseForm({ product }) {
       </label>
 
       {product.price != null ? (
-        <button type="submit" className="button" disabled={loading}>
-          {loading ? "Starting checkout..." : "Buy Now"}
-        </button>
+        <>
+          <button type="submit" className="button">
+            Add to Cart
+          </button>
+          <Link href="/cart" className="button-secondary">
+            View Cart
+          </Link>
+        </>
       ) : (
         <a className="button" href="/contact">
           Ask About Ordering
@@ -80,11 +70,11 @@ export function ProductPurchaseForm({ product }) {
 
       <p className="helper-text">
         {product.price != null
-          ? "If Stripe keys are not added yet, this will continue in demo checkout mode."
+          ? "Add products to your cart here, then continue to checkout at the end. Stripe will take over when keys are connected."
           : "Pricing is being finalized. Use the contact option to place an order or request current pricing."}
       </p>
 
-      {error ? <p className="error-text">{error}</p> : null}
+      {notice ? <p className="helper-text">{notice}</p> : null}
     </form>
   );
 }

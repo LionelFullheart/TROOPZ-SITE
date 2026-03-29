@@ -5,24 +5,44 @@ import { getStripeClient, hasStripeConfig } from "@/lib/stripe";
 export async function POST(request) {
   try {
     const body = await request.json();
-    const product = getProductBySlug(body.slug);
+    const cartItems = Array.isArray(body.items)
+      ? body.items
+      : [
+          {
+            slug: body.slug,
+            quantity: body.quantity,
+            size: body.size,
+          },
+        ];
 
-    if (!product) {
-      return NextResponse.json({ error: "Product not found." }, { status: 404 });
+    if (!cartItems.length) {
+      return NextResponse.json({ error: "Your cart is empty." }, { status: 400 });
     }
 
-    const quantity = Math.min(Math.max(Number(body.quantity) || 1, 1), 10);
-    const size = body.size || product.availableSizes[0];
+    const normalizedItems = cartItems.map((item) => {
+      const product = getProductBySlug(item.slug);
 
-    if (product.price == null) {
-      return NextResponse.json(
-        { error: "Pricing is not set yet for this product. Please use the contact form to order." },
-        { status: 400 }
-      );
-    }
+      if (!product) {
+        throw new Error("Product not found.");
+      }
+
+      if (product.price == null) {
+        throw new Error(
+          "One or more products do not have pricing set yet. Please use the contact form to order."
+        );
+      }
+
+      return {
+        product,
+        quantity: Math.min(Math.max(Number(item.quantity) || 1, 1), 10),
+        size: item.size || product.availableSizes[0],
+      };
+    });
 
     if (!hasStripeConfig()) {
-      const demoUrl = `/success?mode=demo&product=${encodeURIComponent(product.name)}&size=${encodeURIComponent(size)}&quantity=${quantity}`;
+      const demoUrl = `/success?mode=demo&items=${normalizedItems.length}&product=${encodeURIComponent(
+        normalizedItems[0].product.name
+      )}`;
       return NextResponse.json({ url: demoUrl, mode: "demo" });
     }
 
@@ -31,21 +51,21 @@ export async function POST(request) {
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
-      success_url: `${siteUrl}/success?mode=live&product=${encodeURIComponent(product.name)}`,
-      cancel_url: `${siteUrl}/products/${product.slug}`,
-      line_items: [
-        {
-          quantity,
-          price_data: {
-            currency: "usd",
-            unit_amount: product.price * 100,
-            product_data: {
-              name: `${product.name} (${size})`,
-              description: product.description,
-            },
+      success_url: `${siteUrl}/success?mode=live&items=${normalizedItems.length}&product=${encodeURIComponent(
+        normalizedItems[0].product.name
+      )}`,
+      cancel_url: `${siteUrl}/cart`,
+      line_items: normalizedItems.map(({ product, quantity, size }) => ({
+        quantity,
+        price_data: {
+          currency: "usd",
+          unit_amount: product.price * 100,
+          product_data: {
+            name: `${product.name} (${size})`,
+            description: product.description,
           },
         },
-      ],
+      })),
     });
 
     return NextResponse.json({ url: session.url, mode: "live" });

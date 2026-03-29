@@ -1,4 +1,5 @@
 import "./globals.css";
+import { CartProvider } from "@/components/CartProvider";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { MusicPlayer } from "@/components/MusicPlayer";
@@ -13,10 +14,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Header />
-        {children}
-        <Footer />
-        <MusicPlayer />
+        <CartProvider>
+          <Header />
+          {children}
+          <Footer />
+          <MusicPlayer />
+        </CartProvider>
       </body>
     </html>
   );

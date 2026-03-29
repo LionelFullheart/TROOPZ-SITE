@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { CartLink } from "@/components/CartLink";
 
 export function Header() {
   return (
@@ -23,6 +24,7 @@ export function Header() {
         <nav className="site-nav">
           <Link href="/">Home</Link>
           <Link href="/shop">Shop</Link>
+          <CartLink />
           <Link href="/about">Brand</Link>
           <Link href="/contact">Contact</Link>
         </nav>

@@ -20,7 +20,6 @@ export default function ContactPage() {
             <p>
               Email: <a href={`mailto:${site.email}`}>{site.email}</a>
             </p>
-            <p>Phone: {site.phone}</p>
           </div>
         </div>
 

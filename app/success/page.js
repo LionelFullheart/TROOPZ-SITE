@@ -8,7 +8,8 @@ export const metadata = {
 export default async function SuccessPage({ searchParams }) {
   const params = await searchParams;
   const mode = params?.mode || "live";
-  const product = params?.product || "your jacket";
+  const product = params?.product || "your product";
+  const itemCount = Number(params?.items || 1);
 
   return (
     <main className="page-section">
@@ -17,8 +18,8 @@ export default async function SuccessPage({ searchParams }) {
         <h1>{mode === "demo" ? "Demo checkout started" : "Thanks for your order."}</h1>
         <p className="lead">
           {mode === "demo"
-            ? `Stripe keys are not connected yet, so ${product} was routed through the safe demo flow.`
-            : `Your checkout for ${product} was started successfully.`}
+            ? `Stripe keys are not connected yet, so your cart with ${itemCount} item${itemCount === 1 ? "" : "s"} was routed through the safe demo flow.`
+            : `Your checkout for ${itemCount} item${itemCount === 1 ? "" : "s"}, starting with ${product}, was started successfully.`}
         </p>
         <p className="section-copy">
           This page gives TROOPZ a clean post-checkout destination for Vercel deployment

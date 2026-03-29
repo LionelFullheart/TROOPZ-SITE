@@ -109,6 +109,12 @@ h3,
   font-weight: 700;
 }
 
+.cart-link {
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
 .hero-section,
 .content-section,
 .page-section {
@@ -379,6 +385,68 @@ h3 {
   gap: 14px;
 }
 
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.cart-list {
+  display: grid;
+  gap: 18px;
+}
+
+.cart-item,
+.cart-summary {
+  background: var(--surface-strong);
+  border: 1px solid rgba(18, 18, 18, 0.08);
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+}
+
+.cart-item {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 18px;
+  overflow: hidden;
+}
+
+.cart-item-image {
+  background: linear-gradient(180deg, #efe7d6 0%, #ffffff 100%);
+}
+
+.cart-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.cart-item-copy {
+  padding: 20px 20px 20px 0;
+}
+
+.cart-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: end;
+  margin-top: 16px;
+}
+
+.inline-field {
+  max-width: 120px;
+}
+
+.cart-summary {
+  padding: 24px;
+  display: grid;
+  gap: 14px;
+  position: sticky;
+  top: 110px;
+}
+
 .field {
   display: grid;
   gap: 8px;
@@ -514,6 +582,7 @@ h3 {
   .split-section,
   .contact-grid,
   .product-detail-grid,
+  .cart-layout,
   .footer-grid,
   .product-grid,
   .activity-grid {
@@ -540,6 +609,14 @@ h3 {
 
   .music-button {
     margin-left: 0;
+  }
+
+  .cart-item {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item-copy {
+    padding: 0 20px 20px;
   }
 }
 
