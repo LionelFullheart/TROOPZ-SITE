@@ -16,7 +16,7 @@ export default function ShopPage() {
           <p className="eyebrow">Shop</p>
           <h1>TROOPZ Products</h1>
           <p className="lead">
-            The first live product drop is here now, with more TROOPZ releases ready to
+            TROOPZ is now live with footwear and apparel, with more releases ready to
             follow as the store grows.
           </p>
         </div>
