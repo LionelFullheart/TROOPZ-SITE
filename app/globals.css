@@ -1,14 +1,14 @@
 :root {
-  --bg: #f4f1e9;
-  --surface: #fcfbf7;
-  --surface-strong: #ffffff;
+  --bg: #d6cfb6;
+  --surface: #c3b99a;
+  --surface-strong: #b4ab89;
   --text: #121212;
-  --muted: #59574f;
-  --line: #d8d1c2;
+  --muted: #554840;
+  --line: #8f846b;
   --green: #0b6d2f;
   --green-deep: #084b21;
-  --sand: #d0c1a1;
-  --shadow: 0 20px 60px rgba(18, 18, 18, 0.08);
+  --sand: #9e9a75;
+  --shadow: 0 20px 60px rgba(28, 34, 46, 0.12);
 }
 
 * {
@@ -25,7 +25,7 @@ body {
   color: var(--text);
   background:
     radial-gradient(circle at top left, rgba(11, 109, 47, 0.08), transparent 24%),
-    linear-gradient(180deg, #f7f4ec 0%, var(--bg) 100%);
+    linear-gradient(180deg, #ddd6be 0%, var(--bg) 100%);
 }
 
 a {
@@ -47,8 +47,8 @@ img {
   top: 0;
   z-index: 20;
   backdrop-filter: blur(12px);
-  background: rgba(244, 241, 233, 0.92);
-  border-bottom: 1px solid rgba(18, 18, 18, 0.08);
+  background: rgba(214, 207, 182, 0.92);
+  border-bottom: 1px solid rgba(85, 72, 64, 0.16);
 }
 
 .nav-shell {
@@ -177,7 +177,7 @@ h3 {
 .contact-form,
 .success-panel {
   background: var(--surface-strong);
-  border: 1px solid rgba(18, 18, 18, 0.08);
+  border: 1px solid rgba(85, 72, 64, 0.16);
   border-radius: 28px;
   box-shadow: var(--shadow);
 }
@@ -185,7 +185,7 @@ h3 {
 .hero-panel {
   padding: 28px;
   background:
-    linear-gradient(180deg, rgba(11, 109, 47, 0.08) 0%, rgba(208, 193, 161, 0.12) 100%),
+    linear-gradient(180deg, rgba(11, 109, 47, 0.08) 0%, rgba(158, 154, 117, 0.2) 100%),
     var(--surface-strong);
 }
 
@@ -203,10 +203,10 @@ h3 {
 }
 
 .status-list span {
-  border: 1px solid rgba(18, 18, 18, 0.08);
+  border: 1px solid rgba(85, 72, 64, 0.14);
   border-radius: 999px;
   padding: 10px 14px;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(226, 220, 196, 0.84);
   font-size: 0.85rem;
   font-weight: 700;
 }
@@ -232,9 +232,9 @@ h3 {
 }
 
 .button-secondary {
-  background: transparent;
+  background: rgba(223, 216, 190, 0.42);
   color: var(--text);
-  border-color: rgba(18, 18, 18, 0.16);
+  border-color: rgba(85, 72, 64, 0.18);
 }
 
 .button-green {
@@ -317,7 +317,7 @@ h3 {
 
 .product-image-wrap {
   aspect-ratio: 1 / 1;
-  background: linear-gradient(180deg, #f0ebdf 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #bdb390 0%, #d8d1b8 100%);
 }
 
 .product-image,
@@ -414,7 +414,7 @@ h3 {
 .activity-grid article {
   padding: 18px;
   border-radius: 20px;
-  background: rgba(11, 109, 47, 0.05);
+  background: rgba(158, 154, 117, 0.2);
 }
 
 .activity-grid strong {
@@ -446,7 +446,7 @@ h3 {
 
 .detail-image-card {
   overflow: hidden;
-  background: linear-gradient(180deg, #efe7d6 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #bcb18d 0%, #d8d1b8 100%);
 }
 
 .detail-gallery {
@@ -458,7 +458,7 @@ h3 {
 .detail-gallery-card {
   overflow: hidden;
   border-radius: 22px;
-  border: 1px solid rgba(18, 18, 18, 0.08);
+  border: 1px solid rgba(85, 72, 64, 0.16);
   background: var(--surface-strong);
   box-shadow: var(--shadow);
 }
@@ -498,7 +498,7 @@ h3 {
 .cart-item,
 .cart-summary {
   background: var(--surface-strong);
-  border: 1px solid rgba(18, 18, 18, 0.08);
+  border: 1px solid rgba(85, 72, 64, 0.16);
   border-radius: 28px;
   box-shadow: var(--shadow);
 }
@@ -511,7 +511,7 @@ h3 {
 }
 
 .cart-item-image {
-  background: linear-gradient(180deg, #efe7d6 0%, #ffffff 100%);
+  background: linear-gradient(180deg, #bcb18d 0%, #d8d1b8 100%);
 }
 
 .cart-item-image img {
@@ -559,7 +559,7 @@ h3 {
   border-radius: 14px;
   padding: 14px 16px;
   font: inherit;
-  background: #fff;
+  background: rgba(230, 223, 199, 0.82);
 }
 
 .contact-grid {
@@ -583,7 +583,8 @@ h3 {
 
 .site-footer {
   padding: 32px 0 48px;
-  border-top: 1px solid rgba(18, 18, 18, 0.08);
+  border-top: 1px solid rgba(85, 72, 64, 0.16);
+  background: rgba(180, 171, 137, 0.26);
 }
 
 .music-player {
