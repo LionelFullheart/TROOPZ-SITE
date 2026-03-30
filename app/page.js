@@ -40,22 +40,19 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="content-section">
-        <div className="shell napalm-banner">
-          <div className="napalm-banner-copy">
-            <p className="eyebrow">Napalm Collection</p>
-            <h2>The Napalm Collection is here.</h2>
-            <p className="section-copy">
-              TROOPZ Napalm print now leads the drop with statement slides, a hooded
-              sweatshirt, and a denim jacket built to stand out as one bold collection.
-            </p>
+      <section className="content-section collection-section">
+        <div className="shell collection-showcase">
+          <div className="napalm-banner">
+            <div className="napalm-banner-copy">
+              <p className="eyebrow">Napalm Collection</p>
+              <h2>The Napalm Collection is here.</h2>
+              <p className="section-copy">
+                Slides, hoodie, and denim jacket built to stand out as one bold collection.
+              </p>
+            </div>
           </div>
-        </div>
-      </section>
 
-      <section className="content-section">
-        <div className="shell">
-          <div className="product-grid">
+          <div className="home-product-grid" aria-label="Napalm collection product carousel">
             {featuredProducts.map((product) => (
               <ProductCard key={product.slug} product={product} />
             ))}

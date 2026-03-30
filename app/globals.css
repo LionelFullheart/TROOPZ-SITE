@@ -285,6 +285,30 @@ h3 {
   gap: 22px;
 }
 
+.collection-section {
+  padding-top: 28px;
+}
+
+.collection-showcase {
+  display: grid;
+  gap: 12px;
+}
+
+.home-product-grid {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(280px, calc((100% - 44px) / 3));
+  gap: 22px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  padding-bottom: 6px;
+}
+
+.home-product-grid > .product-card {
+  scroll-snap-align: start;
+}
+
 .product-card {
   overflow: hidden;
 }
@@ -327,7 +351,8 @@ h3 {
 .napalm-banner {
   display: flex;
   align-items: flex-end;
-  padding: 34px;
+  min-height: 190px;
+  padding: 22px 26px;
   border-radius: 36px;
   border: 1px solid rgba(18, 18, 18, 0.06);
   background:
@@ -363,12 +388,13 @@ h3 {
 }
 
 .napalm-banner-copy .section-copy {
-  max-width: 40rem;
+  max-width: 34rem;
+  margin: 0;
 }
 
 .napalm-banner-copy h2 {
-  font-size: clamp(2.4rem, 4.5vw, 4.3rem);
-  margin-bottom: 12px;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  margin-bottom: 8px;
 }
 
 .activity-panel,
@@ -691,12 +717,14 @@ h3 {
   }
 
   .napalm-banner {
-    padding: 24px;
+    min-height: 0;
+    padding: 18px 18px 16px;
     border-radius: 28px;
   }
 
-  .napalm-banner-art {
-    min-height: 180px;
+  .home-product-grid {
+    grid-auto-columns: 84%;
+    gap: 16px;
   }
 }
 
