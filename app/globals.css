@@ -297,13 +297,13 @@ h3 {
 .home-product-grid {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(280px, 31%);
+  grid-auto-columns: calc((100% - 44px) / 3);
   gap: 22px;
   overflow-x: auto;
   overscroll-behavior-x: contain;
   scroll-snap-type: x proximity;
   padding-bottom: 6px;
-  padding-right: 10%;
+  padding-right: 0;
   scrollbar-width: thin;
 }
 
