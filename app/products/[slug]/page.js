@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ProductItemShowcase } from "@/components/ProductItemShowcase";
 import { ProductPurchaseForm } from "@/components/ProductPurchaseForm";
 import { getProductBySlug, getProducts } from "@/lib/products";
 
@@ -32,6 +33,21 @@ export default async function ProductPage({ params }) {
 
   if (!product) {
     notFound();
+  }
+
+  if (product.viewer?.enabled) {
+    return (
+      <main className="page-section">
+        <div className="shell">
+          <ProductItemShowcase product={product}>
+            <ProductPurchaseForm product={product} variant="viewer" id="purchase-panel" />
+            <Link href="/contact" className="text-link">
+              Need help before ordering? Contact TROOPZ.
+            </Link>
+          </ProductItemShowcase>
+        </div>
+      </main>
+    );
   }
 
   return (
