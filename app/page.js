@@ -39,7 +39,7 @@ export default function HomePage() {
               <ProductCard
                 key={product.slug}
                 product={product}
-                useViewer={product.slug === "napalm-slides"}
+                useViewer={product.slug === "napalm-slides" && product.viewer?.enabled}
               />
             ))}
           </div>
