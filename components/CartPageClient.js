@@ -63,9 +63,6 @@ export function CartPageClient() {
       <div>
         <p className="eyebrow">Cart</p>
         <h1>Your TROOPZ cart</h1>
-        <p className="lead">
-          Review your products, adjust sizes or quantities, and continue to checkout.
-        </p>
 
         <div className="cart-list">
           {items.map((item) => (

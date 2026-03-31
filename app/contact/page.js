@@ -12,10 +12,8 @@ export default function ContactPage() {
       <div className="shell contact-grid">
         <div>
           <p className="eyebrow">Contact TROOPZ</p>
-          <h1>Orders, questions, and direct brand inquiries.</h1>
-          <p className="lead">
-            Use the form for product questions, custom requests, or sizing help.
-          </p>
+          <h1>Orders, sizing, and direct inquiries.</h1>
+          <p className="lead">Use the form or email TROOPZ directly.</p>
           <div className="contact-info">
             <p>
               Email: <a href={`mailto:${site.email}`}>{site.email}</a>

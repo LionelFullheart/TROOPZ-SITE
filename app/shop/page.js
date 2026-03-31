@@ -14,11 +14,7 @@ export default function ShopPage() {
       <div className="shell">
         <div className="page-header">
           <p className="eyebrow">Shop</p>
-          <h1>TROOPZ Products</h1>
-          <p className="lead">
-            TROOPZ is now live with footwear and apparel, with more releases ready to
-            follow as the store grows.
-          </p>
+          <h1>Featured products</h1>
         </div>
 
         <div className="product-grid">

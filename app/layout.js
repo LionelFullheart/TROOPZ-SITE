@@ -2,6 +2,7 @@ import "./globals.css";
 import { CartProvider } from "@/components/CartProvider";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { MarqueeBar } from "@/components/MarqueeBar";
 import { MusicPlayer } from "@/components/MusicPlayer";
 
 export const metadata = {
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
       <body>
         <CartProvider>
           <Header />
+          <MarqueeBar />
           {children}
           <Footer />
           <MusicPlayer />

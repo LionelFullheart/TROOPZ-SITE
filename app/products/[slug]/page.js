@@ -66,7 +66,7 @@ export default async function ProductPage({ params }) {
         </div>
 
         <div className="detail-copy">
-          <p className="eyebrow">TROOPZ Product</p>
+          <p className="eyebrow">Featured Product</p>
           <h1>{product.name}</h1>
           <p className="detail-price">
             {product.price != null ? `$${product.price} USD` : product.priceLabel}
@@ -74,7 +74,7 @@ export default async function ProductPage({ params }) {
           <p className="lead">{product.description}</p>
           <p className="section-copy">{product.details}</p>
           <p className="coming-soon-note">
-            Available now in men's sizes 5 through 13.
+            Available sizes: {product.availableSizes.join(", ")}.
           </p>
 
           <ProductPurchaseForm product={product} />

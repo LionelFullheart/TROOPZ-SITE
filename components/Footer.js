@@ -8,8 +8,7 @@ export function Footer() {
         <div>
           <p className="footer-title">TROOPZ</p>
           <p className="footer-copy">
-            A direct-to-customer jacket brand site built for fast editing,
-            real brand presentation, and simple deployment.
+            Napalm collection live now.
           </p>
         </div>
 

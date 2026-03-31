@@ -21,10 +21,6 @@ export default async function SuccessPage({ searchParams }) {
             ? `Stripe keys are not connected yet, so your cart with ${itemCount} item${itemCount === 1 ? "" : "s"} was routed through the safe demo flow.`
             : `Your checkout for ${itemCount} item${itemCount === 1 ? "" : "s"}, starting with ${product}, was started successfully.`}
         </p>
-        <p className="section-copy">
-          This page gives TROOPZ a clean post-checkout destination for Vercel deployment
-          and future Stripe sessions.
-        </p>
         <div className="button-row">
           <Link href="/shop" className="button">
             Back to Shop
