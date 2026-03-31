@@ -1,12 +1,9 @@
 import Link from "next/link";
-import { FloatingItemViewer } from "@/components/FloatingItemViewer";
 import { ProductCard } from "@/components/ProductCard";
 import { getFeaturedProducts } from "@/lib/products";
 
 export default function HomePage() {
   const featuredProducts = getFeaturedProducts();
-  const featuredStageProduct =
-    featuredProducts.find((product) => product.viewer?.enabled) || featuredProducts[0];
 
   return (
     <main>
@@ -20,17 +17,13 @@ export default function HomePage() {
                 Slides, hoodie, and denim jacket built to stand out as one bold collection.
               </p>
               <div className="button-row">
-                <Link href={`/products/${featuredStageProduct.slug}`} className="button">
-                  View Item
-                </Link>
-                <Link href="/shop" className="button-secondary">
+                <Link href="/shop" className="button">
                   Shop Collection
                 </Link>
+                <Link href="/contact" className="button-secondary">
+                  Contact TROOPZ
+                </Link>
               </div>
-            </div>
-
-            <div className="napalm-banner-object" aria-label="Floating featured product">
-              <FloatingItemViewer product={featuredStageProduct} className="napalm-banner-viewer" />
             </div>
           </div>
 

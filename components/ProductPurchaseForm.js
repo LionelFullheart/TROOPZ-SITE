@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { useCart } from "@/components/CartProvider";
 
-export function ProductPurchaseForm({ product, variant = "default", id }) {
+export function ProductPurchaseForm({ product }) {
   const { addItem } = useCart();
   const [size, setSize] = useState(product.availableSizes[0] ?? "M");
   const [quantity, setQuantity] = useState(1);
@@ -26,11 +26,7 @@ export function ProductPurchaseForm({ product, variant = "default", id }) {
   }
 
   return (
-    <form
-      className={`purchase-panel${variant === "viewer" ? " purchase-panel-viewer" : ""}`}
-      id={id}
-      onSubmit={handleAddToCart}
-    >
+    <form className="purchase-panel" onSubmit={handleAddToCart}>
       <label className="field">
         <span>Size</span>
         <select value={size} onChange={(event) => setSize(event.target.value)}>
@@ -56,7 +52,7 @@ export function ProductPurchaseForm({ product, variant = "default", id }) {
       {product.price != null ? (
         <>
           <button type="submit" className="button">
-            {product.viewer?.ctaLabel || "Add to Cart"}
+            Add to Cart
           </button>
           <Link href="/cart" className="button-secondary">
             View Cart
