@@ -355,12 +355,47 @@ h3 {
   background: #111;
 }
 
+.product-image-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .product-image,
 .detail-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.floating-item-viewer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  background:
+    radial-gradient(circle at center, rgba(255, 122, 26, 0.16) 0%, rgba(255, 122, 26, 0.05) 24%, rgba(0, 0, 0, 0) 52%),
+    linear-gradient(180deg, #0a0a0a 0%, #020202 100%);
+}
+
+.floating-item-viewer canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.floating-item-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.floating-item-fallback img {
+  width: 78%;
+  filter: drop-shadow(0 24px 24px rgba(0, 0, 0, 0.55));
 }
 
 .product-copy {
