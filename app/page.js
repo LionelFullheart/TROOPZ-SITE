@@ -36,7 +36,11 @@ export default function HomePage() {
 
           <div className="home-product-grid" aria-label="Napalm collection product carousel">
             {featuredProducts.map((product) => (
-              <ProductCard key={product.slug} product={product} />
+              <ProductCard
+                key={product.slug}
+                product={product}
+                useViewer={product.slug === "napalm-slides"}
+              />
             ))}
           </div>
         </div>

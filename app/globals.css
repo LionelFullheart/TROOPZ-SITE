@@ -361,6 +361,24 @@ h3 {
   height: 100%;
 }
 
+.product-card-viewer,
+.product-card-viewer-fallback {
+  width: 100%;
+  height: 100%;
+}
+
+.product-card-viewer {
+  background:
+    radial-gradient(circle at center, rgba(255, 122, 26, 0.12) 0%, rgba(255, 122, 26, 0.04) 24%, rgba(0, 0, 0, 0) 48%),
+    linear-gradient(180deg, #0a0a0a 0%, #020202 100%);
+}
+
+.product-card-viewer canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .product-image,
 .detail-image {
   width: 100%;
