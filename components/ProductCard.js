@@ -16,10 +16,9 @@ export function ProductCard({ product }) {
       <div className="product-copy">
         <p className="product-label">TROOPZ {product.category || "Product"}</p>
         <h3>{product.name}</h3>
-        <p>{product.description}</p>
         <div className="product-meta">
           <span>{product.price != null ? `$${product.price} USD` : product.priceLabel}</span>
-          <Link href={`/products/${product.slug}`} className="button button-green">
+          <Link href={`/products/${product.slug}`} className="button-secondary product-link">
             View Product
           </Link>
         </div>
