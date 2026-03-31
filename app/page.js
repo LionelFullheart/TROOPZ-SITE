@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FloatingProductStage } from "@/components/FloatingProductStage";
+import { FloatingItemViewer } from "@/components/FloatingItemViewer";
 import { ProductCard } from "@/components/ProductCard";
 import { getFeaturedProducts } from "@/lib/products";
 
@@ -12,7 +12,27 @@ export default function HomePage() {
     <main>
       <section className="content-section collection-section">
         <div className="shell collection-showcase">
-          <FloatingProductStage product={featuredStageProduct} />
+          <div className="napalm-banner">
+            <div className="napalm-banner-copy">
+              <p className="eyebrow">Napalm Collection</p>
+              <h2>The Napalm Collection is here.</h2>
+              <p className="section-copy">
+                Slides, hoodie, and denim jacket built to stand out as one bold collection.
+              </p>
+              <div className="button-row">
+                <Link href={`/products/${featuredStageProduct.slug}`} className="button">
+                  View Item
+                </Link>
+                <Link href="/shop" className="button-secondary">
+                  Shop Collection
+                </Link>
+              </div>
+            </div>
+
+            <div className="napalm-banner-object" aria-label="Floating featured product">
+              <FloatingItemViewer product={featuredStageProduct} className="napalm-banner-viewer" />
+            </div>
+          </div>
 
           <div className="collection-toolbar">
             <p className="collection-title">Featured products</p>

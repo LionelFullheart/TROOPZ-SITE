@@ -312,81 +312,6 @@ h3 {
   gap: 18px;
 }
 
-.floating-stage {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 28px;
-  align-items: stretch;
-}
-
-.floating-stage-scene,
-.floating-stage-copy {
-  position: relative;
-  overflow: hidden;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01)),
-    #040404;
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  box-shadow: var(--shadow);
-}
-
-.floating-stage-scene {
-  min-height: 620px;
-  background:
-    radial-gradient(circle at 50% 46%, rgba(255, 122, 26, 0.12) 0%, rgba(255, 122, 26, 0.04) 18%, rgba(0, 0, 0, 0) 42%),
-    linear-gradient(180deg, #0b0b0b 0%, #020202 100%);
-}
-
-.floating-stage-scene-glow {
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 48% 58%, rgba(255, 122, 26, 0.18), rgba(255, 122, 26, 0.03) 22%, rgba(255, 122, 26, 0) 46%),
-    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.04), transparent 32%);
-  pointer-events: none;
-}
-
-.floating-stage-label {
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  z-index: 2;
-  padding: 10px 14px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(12px);
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.floating-stage-viewer {
-  min-height: 620px;
-}
-
-.floating-stage-copy {
-  padding: 30px;
-  display: grid;
-  align-content: center;
-  gap: 18px;
-}
-
-.floating-stage-copy h2 {
-  font-size: clamp(3rem, 6vw, 5rem);
-  line-height: 0.92;
-  margin: 0;
-}
-
-.floating-stage-subtitle {
-  margin: -6px 0 0;
-  color: rgba(255, 248, 232, 0.8);
-  font-size: 0.92rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 .collection-toolbar {
   display: flex;
   align-items: center;
@@ -632,9 +557,10 @@ h3 {
 }
 
 .napalm-banner {
-  display: flex;
-  align-items: flex-end;
-  min-height: 190px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 440px);
+  align-items: center;
+  min-height: 240px;
   padding: 22px 26px;
   border-radius: 0;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -664,6 +590,10 @@ h3 {
   z-index: 1;
 }
 
+.napalm-banner-copy {
+  max-width: 38rem;
+}
+
 .napalm-banner-copy .eyebrow,
 .napalm-banner-copy h2,
 .napalm-banner-copy .section-copy {
@@ -678,6 +608,17 @@ h3 {
 .napalm-banner-copy h2 {
   font-size: clamp(2rem, 4vw, 3.4rem);
   margin-bottom: 8px;
+}
+
+.napalm-banner-object {
+  position: relative;
+  z-index: 1;
+  min-height: 250px;
+}
+
+.napalm-banner-viewer {
+  min-height: 250px;
+  background: transparent;
 }
 
 .activity-panel,
@@ -973,7 +914,6 @@ h3 {
 
 @media (max-width: 920px) {
   .split-section,
-  .floating-stage,
   .item-showcase,
   .napalm-banner,
   .contact-grid,
@@ -1026,11 +966,6 @@ h3 {
     min-height: 520px;
   }
 
-  .floating-stage-scene,
-  .floating-stage-viewer {
-    min-height: 460px;
-  }
-
   .home-product-grid {
     grid-auto-columns: 84%;
     gap: 16px;
@@ -1060,6 +995,11 @@ h3 {
 
   .item-showcase-card {
     padding: 20px;
+  }
+
+  .napalm-banner-object,
+  .napalm-banner-viewer {
+    min-height: 220px;
   }
 
   .item-meta-grid {
