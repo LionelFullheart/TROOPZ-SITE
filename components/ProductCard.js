@@ -1,23 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FloatingItemViewer } from "@/components/FloatingItemViewer";
-
-export function ProductCard({ product, showViewer = false }) {
+export function ProductCard({ product }) {
   return (
     <article className="product-card">
       <div className="product-image-wrap">
         <Link href={`/products/${product.slug}`} className="product-image-link" aria-label={product.name}>
-          {showViewer && product.viewer?.enabled ? (
-            <FloatingItemViewer product={product} />
-          ) : (
-            <Image
-              src={product.image}
-              alt={product.name}
-              width={720}
-              height={720}
-              className="product-image"
-            />
-          )}
+          <Image
+            src={product.image}
+            alt={product.name}
+            width={720}
+            height={720}
+            className="product-image"
+          />
         </Link>
       </div>
       <div className="product-copy">
