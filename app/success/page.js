@@ -7,26 +7,23 @@ export const metadata = {
 
 export default async function SuccessPage({ searchParams }) {
   const params = await searchParams;
-  const mode = params?.mode || "live";
-  const product = params?.product || "your product";
+  const product = params?.product || "your selected item";
   const itemCount = Number(params?.items || 1);
 
   return (
     <main className="page-section">
       <div className="shell narrow-page success-panel">
-        <p className="eyebrow">Checkout Return</p>
-        <h1>{mode === "demo" ? "Demo checkout started" : "Thanks for your order."}</h1>
+        <p className="eyebrow">Order Inquiry</p>
+        <h1>Contact TROOPZ to complete your order.</h1>
         <p className="lead">
-          {mode === "demo"
-            ? `Stripe keys are not connected yet, so your cart with ${itemCount} item${itemCount === 1 ? "" : "s"} was routed through the safe demo flow.`
-            : `Your checkout for ${itemCount} item${itemCount === 1 ? "" : "s"}, starting with ${product}, was started successfully.`}
+          Your selection has been received for {itemCount} item{itemCount === 1 ? "" : "s"}, including {product}. Contact TROOPZ directly to confirm availability, sizing, and final order details.
         </p>
         <div className="button-row">
-          <Link href="/shop" className="button">
-            Back to Shop
-          </Link>
-          <Link href="/contact" className="button-secondary">
+          <Link href="/contact" className="button">
             Contact TROOPZ
+          </Link>
+          <Link href="/shop" className="button-secondary">
+            Back to Shop
           </Link>
         </div>
       </div>
