@@ -9,7 +9,7 @@ export function Header() {
       <div className="shell nav-shell">
         <Link href="/" className="brand" aria-label="TROOPZ home">
           <Image
-            src="/logo.png"
+            src="/logo-white.png"
             alt="TROOPZ logo"
             width={88}
             height={88}
