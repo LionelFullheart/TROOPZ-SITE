@@ -51,6 +51,9 @@ export async function POST(request) {
 
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
+      phone_number_collection: {
+        enabled: true,
+      },
       success_url: `${siteUrl}/success?mode=live&items=${normalizedItems.length}&product=${encodeURIComponent(
         normalizedItems[0].product.name
       )}`,
