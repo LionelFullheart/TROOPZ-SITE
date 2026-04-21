@@ -3,7 +3,11 @@
 import { useState } from "react";
 import { site } from "@/lib/site";
 
-export function ContactForm() {
+export function ContactForm({
+  initialInterest = "Drop updates",
+  initialMessage = "",
+  submitLabel = "Send to TROOPZ",
+}) {
   const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -62,7 +66,7 @@ export function ContactForm() {
       </label>
       <label className="field">
         <span>Interest</span>
-        <select name="interest" defaultValue="Drop updates">
+        <select name="interest" defaultValue={initialInterest}>
           <option>Drop updates</option>
           <option>Order inquiry</option>
           <option>Sizing help</option>
@@ -76,11 +80,12 @@ export function ContactForm() {
           name="message"
           rows="5"
           placeholder="Tell us what item you want, your size, and whether you want drop alerts."
+          defaultValue={initialMessage}
           required
         />
       </label>
       <button type="submit" className="button" disabled={loading}>
-        {loading ? "Opening..." : "Send to TROOPZ"}
+        {loading ? "Opening..." : submitLabel}
       </button>
       {status ? <p className="helper-text">{status}</p> : null}
     </form>
