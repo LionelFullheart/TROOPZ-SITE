@@ -8,7 +8,7 @@ export function CollectionBanner({
   description,
   materials,
   theme = "napalm",
-  ctaLabel = "View Collection",
+  ctaLabel,
   ctaHref = "/shop",
 }) {
   return (
@@ -33,9 +33,11 @@ export function CollectionBanner({
               <strong>{releaseValue}</strong>
             </div>
           </div>
-          <Link href={ctaHref} className="button-secondary collection-banner-cta">
-            {ctaLabel}
-          </Link>
+          {ctaLabel ? (
+            <Link href={ctaHref} className="button-secondary collection-banner-cta">
+              {ctaLabel}
+            </Link>
+          ) : null}
         </div>
       </div>
     </section>

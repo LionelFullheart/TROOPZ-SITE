@@ -23,8 +23,6 @@ export default function HomePage() {
       description:
         "The Napalm Collection is a full set built with intention. Each piece features our signature flame print and is designed to stand out as one unified drop.",
       materials: "400 GSM Cotton / Premium Denim",
-      ctaLabel: "Shop Drop",
-      ctaHref: "/shop",
       products: napalmProducts,
     },
     {
@@ -37,8 +35,6 @@ export default function HomePage() {
       description:
         "Inspired by the everyday. The Stew Collection is built for comfort, movement, and longevity. Quality pieces for real life.",
       materials: "420 GSM Cotton / Washed Fleece",
-      ctaLabel: "View Collection",
-      ctaHref: "/shop",
       products: [
         {
           type: "TROOPZ Slides",
@@ -73,8 +69,6 @@ export default function HomePage() {
       description:
         "A tribute. The LA Capone Collection honors legacy and impact with pieces that speak louder than words.",
       materials: "Premium Cotton / Heavyweight Fleece",
-      ctaLabel: "View Collection",
-      ctaHref: "/shop",
       products: [
         {
           type: "TROOPZ Slides",
