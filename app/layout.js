@@ -16,8 +16,8 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <CartProvider>
-          <Header />
           <MarqueeBar />
+          <Header />
           {children}
           <Footer />
           <MusicPlayer />

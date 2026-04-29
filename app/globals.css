@@ -51,7 +51,7 @@ img {
 
 .site-header {
   position: sticky;
-  top: 0;
+  top: 35px;
   z-index: 20;
   backdrop-filter: blur(12px);
   background: rgba(0, 0, 0, 0.92);
@@ -59,6 +59,9 @@ img {
 }
 
 .marquee-bar {
+  position: sticky;
+  top: 0;
+  z-index: 21;
   overflow: hidden;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   background: #020202;
@@ -68,10 +71,10 @@ img {
   display: flex;
   gap: 36px;
   width: max-content;
-  padding: 10px 24px;
-  font-size: 0.78rem;
+  padding: 9px 24px;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: #fff;
   animation: marquee-slide 24s linear infinite;
@@ -86,26 +89,25 @@ img {
   justify-content: space-between;
   align-items: center;
   gap: 24px;
-  padding: 16px 0;
+  padding: 14px 0;
 }
 
 .header-meta-nav {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 8px;
+  align-items: center;
+  gap: 18px;
 }
 
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
   text-decoration: none;
 }
 
 .brand-logo {
-  width: 68px;
-  height: 68px;
+  width: 58px;
+  height: 58px;
   object-fit: contain;
 }
 
@@ -119,7 +121,7 @@ h3,
 }
 
 .brand-name {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   line-height: 1;
   color: #ffffff;
 }
@@ -138,23 +140,24 @@ h3,
 .site-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 18px;
+  gap: 26px;
 }
 
 .specimen-info {
   display: inline-flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 6px 10px;
-  padding: 5px 10px;
+  padding: 7px 14px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.03);
   color: rgba(255, 255, 255, 0.88);
-  font-size: 0.58rem;
+  font-size: 0.62rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   line-height: 1.1;
+  min-width: 330px;
 }
 
 .specimen-url {
@@ -163,14 +166,14 @@ h3,
 
 .site-nav a {
   text-decoration: none;
-  font-size: 0.92rem;
+  font-size: 0.98rem;
   font-weight: 700;
   color: #fff;
 }
 
 .cart-link {
   text-decoration: none;
-  font-size: 0.92rem;
+  font-size: 0.98rem;
   font-weight: 700;
   color: #fff;
 }
@@ -899,7 +902,7 @@ h3 {
 }
 
 .site-footer {
-  padding: 24px 0 36px;
+  padding: 28px 0 34px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   background: #050505;
 }
@@ -980,18 +983,63 @@ h3 {
 }
 
 .footer-grid {
-  grid-template-columns: 1.3fr 1fr 1fr;
+  grid-template-columns: 1.45fr 0.75fr 0.75fr 0.9fr 0.95fr;
   align-items: start;
+  gap: 28px;
 }
 
 .footer-title {
   margin: 0 0 12px;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .footer-links {
   flex-direction: column;
   align-items: flex-start;
+  gap: 8px;
+}
+
+.footer-brand-block {
+  display: grid;
+  gap: 12px;
+}
+
+.footer-brand {
+  align-items: flex-start;
+}
+
+.footer-logo {
+  width: 60px;
+  height: 60px;
+}
+
+.footer-copy {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.88rem;
+}
+
+.footer-social-block {
+  justify-self: end;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer-socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.72rem;
+  font-weight: 700;
 }
 
 @media (max-width: 920px) {
@@ -1015,10 +1063,12 @@ h3 {
   .header-meta-nav {
     width: 100%;
     align-items: flex-start;
+    flex-direction: column-reverse;
   }
 
   .specimen-info {
     justify-content: flex-start;
+    min-width: 0;
   }
 
   .site-nav {
@@ -1071,6 +1121,10 @@ h3 {
     grid-template-columns: 1fr;
     gap: 12px;
   }
+
+  .footer-social-block {
+    justify-self: start;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1082,6 +1136,10 @@ h3 {
   .brand-logo {
     width: 56px;
     height: 56px;
+  }
+
+  .site-header {
+    top: 31px;
   }
 
   h1 {
@@ -1102,6 +1160,21 @@ h3 {
 
   .collection-banner-subtitle {
     letter-spacing: 0.22em;
+  }
+
+  .site-nav {
+    gap: 16px;
+  }
+
+  .specimen-info {
+    padding: 6px 10px;
+    font-size: 0.54rem;
+  }
+
+  .marquee-track {
+    gap: 24px;
+    padding: 7px 18px;
+    font-size: 0.64rem;
   }
 
   .collection-banner-description {

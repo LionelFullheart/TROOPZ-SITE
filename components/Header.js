@@ -23,7 +23,6 @@ export function Header() {
         </Link>
 
         <div className="header-meta-nav">
-          <SpecimenInfo />
           <nav className="site-nav">
             <Link href="/">Home</Link>
             <Link href="/shop">Shop</Link>
@@ -31,6 +30,7 @@ export function Header() {
             <Link href="/about">Brand</Link>
             <Link href="/contact">Contact</Link>
           </nav>
+          <SpecimenInfo />
         </div>
       </div>
     </header>
