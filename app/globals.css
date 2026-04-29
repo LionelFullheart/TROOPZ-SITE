@@ -51,7 +51,7 @@ img {
 
 .site-header {
   position: sticky;
-  top: 35px;
+  top: 0;
   z-index: 20;
   backdrop-filter: blur(12px);
   background: rgba(0, 0, 0, 0.92);
@@ -59,9 +59,8 @@ img {
 }
 
 .marquee-bar {
-  position: sticky;
-  top: 0;
-  z-index: 21;
+  position: relative;
+  z-index: 19;
   overflow: hidden;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   background: #020202;
@@ -902,7 +901,7 @@ h3 {
 }
 
 .site-footer {
-  padding: 28px 0 34px;
+  padding: 18px 0 22px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   background: #050505;
 }
@@ -983,25 +982,25 @@ h3 {
 }
 
 .footer-grid {
-  grid-template-columns: 1.45fr 0.75fr 0.75fr 0.9fr 0.95fr;
-  align-items: start;
-  gap: 28px;
+  grid-template-columns: 1.25fr 0.9fr 0.9fr 1fr 0.95fr;
+  align-items: flex-start;
+  gap: 42px;
 }
 
 .footer-title {
-  margin: 0 0 12px;
-  font-size: 1rem;
+  margin: 0 0 8px;
+  font-size: 0.92rem;
 }
 
 .footer-links {
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
+  gap: 5px;
 }
 
 .footer-brand-block {
   display: grid;
-  gap: 12px;
+  gap: 8px;
 }
 
 .footer-brand {
@@ -1009,14 +1008,14 @@ h3 {
 }
 
 .footer-logo {
-  width: 60px;
-  height: 60px;
+  width: 54px;
+  height: 54px;
 }
 
 .footer-copy {
   margin: 0;
   color: rgba(255, 255, 255, 0.72);
-  font-size: 0.88rem;
+  font-size: 0.78rem;
 }
 
 .footer-social-block {
@@ -1026,19 +1025,19 @@ h3 {
 .footer-socials {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 10px;
 }
 
 .footer-socials a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 30px;
+  height: 30px;
   border: 1px solid rgba(255, 255, 255, 0.14);
   color: #fff;
   text-decoration: none;
-  font-size: 0.72rem;
+  font-size: 0.64rem;
   font-weight: 700;
 }
 
@@ -1136,10 +1135,6 @@ h3 {
   .brand-logo {
     width: 56px;
     height: 56px;
-  }
-
-  .site-header {
-    top: 31px;
   }
 
   h1 {
