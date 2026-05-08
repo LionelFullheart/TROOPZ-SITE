@@ -95,11 +95,13 @@ export default function HomePage() {
     },
   ];
 
+  const homepageCollections = [...collections].reverse();
+
   return (
     <main>
       <section className="content-section drop-homepage">
         <div className="shell drop-homepage-shell">
-          {collections.map((collection) => (
+          {homepageCollections.map((collection) => (
             <section className="drop-collection-block" key={collection.key}>
               <CollectionBanner
                 dropLabel={collection.dropLabel}
