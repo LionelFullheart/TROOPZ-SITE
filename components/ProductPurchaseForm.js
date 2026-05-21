@@ -9,6 +9,7 @@ export function ProductPurchaseForm({ product }) {
   const [size, setSize] = useState(product.availableSizes[0] ?? "M");
   const [quantity, setQuantity] = useState(1);
   const [notice, setNotice] = useState("");
+  const isComingSoon = product.releaseState === "coming-soon";
 
   function handleAddToCart(event) {
     event.preventDefault();
@@ -49,7 +50,16 @@ export function ProductPurchaseForm({ product }) {
         />
       </label>
 
-      {product.price != null ? (
+      {isComingSoon ? (
+        <>
+          <button type="button" className="button" disabled>
+            Drops June 4, 2026
+          </button>
+          <Link href="/contact" className="button-secondary">
+            Get Drop Updates
+          </Link>
+        </>
+      ) : product.price != null ? (
         <>
           <button type="submit" className="button">
             Add to Cart
@@ -69,7 +79,9 @@ export function ProductPurchaseForm({ product }) {
       </a>
 
       <p className="helper-text">
-        {product.price != null
+        {isComingSoon
+          ? "This capsule item is view-only until the June 4, 2026 release. Browse the colorways now and contact TROOPZ for drop updates."
+          : product.price != null
           ? "Add products to your cart here, then continue to checkout at the end. Stripe will take over when keys are connected."
           : "Pricing is being finalized. Use the contact option to place an order or request current pricing."}
       </p>

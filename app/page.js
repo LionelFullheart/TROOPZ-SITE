@@ -14,6 +14,40 @@ export default function HomePage() {
 
   const collections = [
     {
+      key: "capone",
+      theme: "capone",
+      dropLabel: "Drop 02",
+      title: "LA Capone",
+      releaseLabel: "Released:",
+      releaseValue: "June 4, 2026",
+      description:
+        "A tribute. The LA Capone Collection honors legacy and impact with pieces that speak louder than words.",
+      materials: "Premium Cotton / Heavyweight Fleece",
+      products: [
+        {
+          type: "TROOPZ Tee",
+          name: "LA Capone Tee",
+          price: "Coming Soon",
+          image: "/products/la-capone-tee-front.png",
+          href: "/products/la-capone-tee",
+        },
+        {
+          type: "TROOPZ Hoodie",
+          name: "LA Capone Hoodie",
+          price: "Coming Soon",
+          image: "/products/la-capone-hoodie-front.png",
+          href: "/products/la-capone-hoodie",
+        },
+        {
+          type: "TROOPZ Varsity",
+          name: "LA Capone Varsity",
+          price: "Coming Soon",
+          image: "/products/la-capone-varsity-front.png",
+          href: "/products/la-capone-varsity",
+        },
+      ],
+    },
+    {
       key: "napalm",
       theme: "napalm",
       dropLabel: "Drop 01",
@@ -25,58 +59,13 @@ export default function HomePage() {
       materials: "400 GSM Cotton / Premium Denim",
       products: napalmProducts,
     },
-    {
-      key: "stew",
-      theme: "stew",
-      dropLabel: "Drop 02",
-      title: "Stew",
-      releaseLabel: "Released:",
-      releaseValue: "May 2026",
-      description:
-        "Inspired by the everyday. The Stew Collection is built for comfort, movement, and longevity. Quality pieces for real life.",
-      materials: "420 GSM Cotton / Washed Fleece",
-      products: [],
-    },
-    {
-      key: "capone",
-      theme: "capone",
-      dropLabel: "Drop 03",
-      title: "LA Capone",
-      releaseLabel: "Released:",
-      releaseValue: "June 2026",
-      description:
-        "A tribute. The LA Capone Collection honors legacy and impact with pieces that speak louder than words.",
-      materials: "Premium Cotton / Heavyweight Fleece",
-      products: [
-        {
-          type: "TROOPZ Tee",
-          name: "LA Capone Tee",
-          price: "Coming Soon",
-          image: "/products/la-capone-tee-front.png",
-        },
-        {
-          type: "TROOPZ Hoodie",
-          name: "LA Capone Hoodie",
-          price: "Coming Soon",
-          image: "/products/la-capone-hoodie-front.png",
-        },
-        {
-          type: "TROOPZ Varsity",
-          name: "LA Capone Varsity",
-          price: "Coming Soon",
-          image: "/products/la-capone-varsity-front.png",
-        },
-      ],
-    },
   ];
-
-  const homepageCollections = [...collections].reverse();
 
   return (
     <main>
       <section className="content-section drop-homepage">
         <div className="shell drop-homepage-shell">
-          {homepageCollections.map((collection) => (
+          {collections.map((collection) => (
             <section className="drop-collection-block" key={collection.key}>
               <CollectionBanner
                 dropLabel={collection.dropLabel}

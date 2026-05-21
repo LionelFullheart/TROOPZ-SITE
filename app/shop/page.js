@@ -1,5 +1,5 @@
 import { ProductCard } from "@/components/ProductCard";
-import { getProducts } from "@/lib/products";
+import { getShopProducts } from "@/lib/products";
 
 export const metadata = {
   title: "Shop | TROOPZ",
@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 export default function ShopPage() {
-  const products = getProducts();
+  const products = getShopProducts();
 
   return (
     <main className="page-section">
