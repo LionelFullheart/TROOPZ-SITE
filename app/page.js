@@ -35,29 +35,7 @@ export default function HomePage() {
       description:
         "Inspired by the everyday. The Stew Collection is built for comfort, movement, and longevity. Quality pieces for real life.",
       materials: "420 GSM Cotton / Washed Fleece",
-      products: [
-        {
-          type: "TROOPZ Slides",
-          name: "Stew Slides",
-          price: "Coming Soon",
-          placeholderVariant: "slides",
-          state: "coming-soon",
-        },
-        {
-          type: "TROOPZ Hoodie",
-          name: "Stew Hoodie",
-          price: "Coming Soon",
-          placeholderVariant: "hoodie",
-          state: "coming-soon",
-        },
-        {
-          type: "TROOPZ Jacket",
-          name: "Stew Denim Jacket",
-          price: "Coming Soon",
-          placeholderVariant: "jacket",
-          state: "coming-soon",
-        },
-      ],
+      products: [],
     },
     {
       key: "capone",
@@ -71,25 +49,22 @@ export default function HomePage() {
       materials: "Premium Cotton / Heavyweight Fleece",
       products: [
         {
-          type: "TROOPZ Slides",
-          name: "LA Capone Slides",
+          type: "TROOPZ Tee",
+          name: "LA Capone Tee",
           price: "Coming Soon",
-          placeholderVariant: "slides",
-          state: "coming-soon",
+          image: "/products/la-capone-tee-front.png",
         },
         {
           type: "TROOPZ Hoodie",
           name: "LA Capone Hoodie",
           price: "Coming Soon",
-          placeholderVariant: "hoodie",
-          state: "coming-soon",
+          image: "/products/la-capone-hoodie-front.png",
         },
         {
-          type: "TROOPZ Jacket",
-          name: "LA Capone Denim Jacket",
+          type: "TROOPZ Varsity",
+          name: "LA Capone Varsity",
           price: "Coming Soon",
-          placeholderVariant: "jacket",
-          state: "coming-soon",
+          image: "/products/la-capone-varsity-front.png",
         },
       ],
     },
@@ -114,20 +89,22 @@ export default function HomePage() {
                 ctaLabel={collection.ctaLabel}
                 ctaHref={collection.ctaHref}
               />
-              <div className="drop-product-grid" aria-label={`${collection.title} products`}>
-                {collection.products.map((product) => (
-                  <DropProductCard
-                    key={`${collection.key}-${product.name}`}
-                    type={product.type}
-                    name={product.name}
-                    price={product.price}
-                    image={product.image}
-                    href={product.href}
-                    state={product.state}
-                    placeholderVariant={product.placeholderVariant}
-                  />
-                ))}
-              </div>
+              {collection.products.length ? (
+                <div className="drop-product-grid" aria-label={`${collection.title} products`}>
+                  {collection.products.map((product) => (
+                    <DropProductCard
+                      key={`${collection.key}-${product.name}`}
+                      type={product.type}
+                      name={product.name}
+                      price={product.price}
+                      image={product.image}
+                      href={product.href}
+                      state={product.state}
+                      placeholderVariant={product.placeholderVariant}
+                    />
+                  ))}
+                </div>
+              ) : null}
             </section>
           ))}
         </div>
