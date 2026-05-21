@@ -47,6 +47,11 @@ export function DropProductCard({
         <p className="drop-card-type">{type}</p>
         <h3>{name}</h3>
         <p className="drop-card-price">{price}</p>
+        {href && !isComingSoon ? (
+          <Link href={href} className="button-secondary drop-card-cta">
+            View Product
+          </Link>
+        ) : null}
       </div>
     </article>
   );

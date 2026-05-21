@@ -598,6 +598,11 @@ h3 {
   font-size: 1.12rem;
 }
 
+.drop-card-cta {
+  justify-self: center;
+  margin-top: 6px;
+}
+
 .drop-card-soon .drop-card-price {
   color: #d0d0d0;
   text-transform: uppercase;
