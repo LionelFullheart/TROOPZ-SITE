@@ -1,6 +1,6 @@
 import { CollectionBanner } from "@/components/CollectionBanner";
 import { DropProductCard } from "@/components/DropProductCard";
-import { getFeaturedProducts } from "@/lib/products";
+import { getFeaturedProducts, getProductBySlug } from "@/lib/products";
 
 export default function HomePage() {
   const featuredProducts = getFeaturedProducts();
@@ -11,6 +11,17 @@ export default function HomePage() {
     image: product.image,
     href: `/products/${product.slug}`,
   }));
+  const caponeSlugs = ["la-capone-tee", "la-capone-hoodie", "la-capone-varsity"];
+  const caponeProducts = caponeSlugs
+    .map((slug) => getProductBySlug(slug))
+    .filter(Boolean)
+    .map((product) => ({
+      type: `TROOPZ ${product.category}`,
+      name: product.name.replace("TROOPZ ", ""),
+      price: product.price != null ? `$${product.price} USD` : product.priceLabel,
+      image: product.image,
+      href: `/products/${product.slug}`,
+    }));
 
   const collections = [
     {
@@ -23,29 +34,7 @@ export default function HomePage() {
       description:
         "A tribute. The LA Capone Collection honors legacy and impact with pieces that speak louder than words.",
       materials: "Premium Cotton / Heavyweight Fleece",
-      products: [
-        {
-          type: "TROOPZ Tee",
-          name: "LA Capone Tee",
-          price: "Coming Soon",
-          image: "/products/la-capone-tee-front.png",
-          href: "/products/la-capone-tee",
-        },
-        {
-          type: "TROOPZ Hoodie",
-          name: "LA Capone Hoodie",
-          price: "Coming Soon",
-          image: "/products/la-capone-hoodie-front.png",
-          href: "/products/la-capone-hoodie",
-        },
-        {
-          type: "TROOPZ Varsity",
-          name: "LA Capone Varsity",
-          price: "Coming Soon",
-          image: "/products/la-capone-varsity-front.png",
-          href: "/products/la-capone-varsity",
-        },
-      ],
+      products: caponeProducts,
     },
     {
       key: "napalm",
