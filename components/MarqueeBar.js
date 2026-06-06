@@ -1,10 +1,10 @@
 export function MarqueeBar() {
   const items = [
-    "Napalm Collection Live",
-    "Slides $100 USD",
-    "Hooded Sweatshirt $120 USD",
-    "Denim Jacket $150 USD",
-    "Orders via Cart + Stripe Checkout Flow",
+    "LA Capone Capsule Live",
+    "Graphic Tee $68 USD",
+    "Hoodie $160 USD",
+    "Varsity Jacket $398 USD",
+    "Shop the Legacy Capsule",
   ];
 
   return (
