@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { ProductZoomImage } from "@/components/ProductZoomImage";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProductPurchaseForm } from "@/components/ProductPurchaseForm";
@@ -38,28 +38,16 @@ export default async function ProductPage({ params }) {
     <main className="page-section">
       <div className="shell product-detail-grid">
         <div className="detail-media">
-          <div className="detail-image-card">
-            <Image
-              src={product.image}
-              alt={product.name}
-              width={960}
-              height={960}
-              className="detail-image"
-              priority
-            />
-          </div>
+          <ProductZoomImage src={product.image} alt={product.name} priority />
           {product.gallery?.length ? (
             <div className="detail-gallery">
               {product.gallery.map((image, index) => (
-                <div className="detail-gallery-card" key={image}>
-                  <Image
-                    src={image}
-                    alt={`${product.name} view ${index + 1}`}
-                    width={400}
-                    height={400}
-                    className="detail-gallery-image"
-                  />
-                </div>
+                <ProductZoomImage
+                  key={image}
+                  src={image}
+                  alt={`${product.name} view ${index + 1}`}
+                  thumbnail
+                />
               ))}
             </div>
           ) : null}
