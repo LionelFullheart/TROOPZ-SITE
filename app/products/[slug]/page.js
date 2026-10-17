@@ -1,4 +1,3 @@
-import { ProductZoomImage } from "@/components/ProductZoomImage";
 import { ProductGallery } from "@/components/ProductGallery";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -39,8 +38,7 @@ export default async function ProductPage({ params }) {
     <main className="page-section">
       <div className="shell product-detail-grid">
         <div className="detail-media">
-          <ProductZoomImage src={product.image} alt={product.name} priority />
-          <ProductGallery images={product.gallery || []} name={product.name} />
+          <ProductGallery images={[product.image, ...(product.gallery || []).filter((image) => image !== product.image)]} name={product.name} />
         </div>
 
         <div className="detail-copy">

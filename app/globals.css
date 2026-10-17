@@ -807,12 +807,36 @@ h3 {
   padding: 48px 16px 12px;
 }
 
-.gallery-full-image {
+.product-zoom.gallery-zoom-image {
+  width: fit-content;
+  max-width: calc(100vw - 32px);
+}
+
+.gallery-zoom-image .detail-image {
   display: block;
   width: auto;
   height: calc(100dvh - 124px);
   max-width: calc(100vw - 32px);
   object-fit: contain;
+}
+
+.gallery-main-image {
+  position: relative;
+  display: block;
+  padding: 0;
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+}
+
+.detail-gallery-link[aria-pressed="true"] {
+  outline: 2px solid #16813b;
+  outline-offset: -2px;
+}
+
+.gallery-main-image:focus-visible {
+  outline: 3px solid #16813b;
+  outline-offset: 3px;
 }
 
 .gallery-controls { display: flex; justify-content: center; align-items: center; gap: 24px; margin-top: 12px; }

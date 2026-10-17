@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { ProductZoomImage } from "@/components/ProductZoomImage";
 import { useRef, useState } from "react";
 
 export function ProductGallery({ images, name }) {
@@ -23,14 +24,24 @@ export function ProductGallery({ images, name }) {
 
   return (
     <>
+      <button
+        type="button"
+        className="detail-image-card gallery-main-image"
+        aria-label={`Open ${name} gallery, view ${selected + 1}`}
+        onClick={() => open(selected)}
+      >
+        <Image src={images[selected]} alt={`${name} view ${selected + 1}`} width={960} height={960} className="detail-image" priority />
+        <span className="product-zoom-hint" aria-hidden="true">+</span>
+      </button>
       <div className="detail-gallery">
         {images.map((image, index) => (
           <button
             type="button"
             key={image}
             className="detail-gallery-card detail-gallery-link"
-            aria-label={`Enlarge ${name}, view ${index + 1}`}
-            onClick={() => open(index)}
+            aria-label={`Show ${name}, view ${index + 1}`}
+            aria-pressed={selected === index}
+            onClick={() => setSelected(index)}
           >
             <Image src={image} alt={`${name} view ${index + 1}`} width={400} height={400} className="detail-gallery-image" />
           </button>
@@ -49,7 +60,7 @@ export function ProductGallery({ images, name }) {
       >
         <div className="gallery-lightbox-content">
           <button type="button" className="gallery-close" autoFocus aria-label="Close image gallery" onClick={() => dialogRef.current.close()}>×</button>
-          <Image src={images[selected]} alt={`${name} view ${selected + 1}`} width={1600} height={1600} className="gallery-full-image" />
+          <ProductZoomImage key={images[selected]} src={images[selected]} alt={`${name} view ${selected + 1}`} className="gallery-zoom-image" />
           <div className="gallery-controls">
             <button type="button" aria-label="Previous image" onClick={() => move(-1)}>←</button>
             <span aria-live="polite">{selected + 1} / {images.length}</span>

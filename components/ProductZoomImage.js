@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 
-export function ProductZoomImage({ src, alt, priority = false }) {
+export function ProductZoomImage({ src, alt, priority = false, className = "" }) {
   const [zoomed, setZoomed] = useState(false);
 
   function moveZoom(event) {
@@ -16,7 +16,7 @@ export function ProductZoomImage({ src, alt, priority = false }) {
   return (
     <button
       type="button"
-      className="product-zoom detail-image-card"
+      className={`product-zoom detail-image-card ${className}`}
       aria-label={`${zoomed ? "Zoom out of" : "Zoom in on"} ${alt}`}
       aria-pressed={zoomed}
       data-zoomed={zoomed}
