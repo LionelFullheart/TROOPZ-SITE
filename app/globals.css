@@ -871,11 +871,11 @@ h3 {
 
 .product-zoom img {
   transform-origin: var(--zoom-x, 50%) var(--zoom-y, 50%);
-  transition: transform 180ms ease;
+  transition: transform 280ms ease;
 }
 
 .product-zoom[data-zoomed="true"] img {
-  transform: scale(2.25);
+  transform: scale(1.4);
 }
 
 .product-zoom[data-zoomed="true"] {
@@ -903,7 +903,7 @@ h3 {
 
 @media (hover: hover) and (pointer: fine) {
   .product-zoom:hover img {
-    transform: scale(2.25);
+    transform: scale(1.4);
   }
 }
 
