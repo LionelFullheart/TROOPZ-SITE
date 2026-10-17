@@ -776,6 +776,15 @@ h3 {
   display: block;
 }
 
+.detail-gallery-link {
+  display: block;
+}
+
+.detail-gallery-link:focus-visible {
+  outline: 3px solid var(--accent, #16813b);
+  outline-offset: 3px;
+}
+
 .product-zoom {
   position: relative;
   display: block;
