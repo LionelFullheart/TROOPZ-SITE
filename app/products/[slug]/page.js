@@ -1,5 +1,5 @@
 import { ProductZoomImage } from "@/components/ProductZoomImage";
-import Image from "next/image";
+import { ProductGallery } from "@/components/ProductGallery";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ProductPurchaseForm } from "@/components/ProductPurchaseForm";
@@ -40,28 +40,7 @@ export default async function ProductPage({ params }) {
       <div className="shell product-detail-grid">
         <div className="detail-media">
           <ProductZoomImage src={product.image} alt={product.name} priority />
-          {product.gallery?.length ? (
-            <div className="detail-gallery">
-              {product.gallery.map((image, index) => (
-                <a
-                  key={image}
-                  href={image}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="detail-gallery-card detail-gallery-link"
-                  aria-label={`Open full image of ${product.name}, view ${index + 1} (new tab)`}
-                >
-                  <Image
-                    src={image}
-                    alt={`${product.name} view ${index + 1}`}
-                    width={400}
-                    height={400}
-                    className="detail-gallery-image"
-                  />
-                </a>
-              ))}
-            </div>
-          ) : null}
+          <ProductGallery images={product.gallery || []} name={product.name} />
         </div>
 
         <div className="detail-copy">
